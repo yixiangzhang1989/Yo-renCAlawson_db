@@ -6,7 +6,6 @@ Created on Mon Aug 28 10:48:05 2017
 """
 
 import sshtunnel,pymysql,time
-import numpy as np
 import pandas as pd
 
 import yorencorrepanallawson_db.yorencorrespanallawson_db
