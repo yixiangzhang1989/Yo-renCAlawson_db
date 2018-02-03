@@ -8,7 +8,7 @@ Created on Mon Aug 28 10:48:05 2017
 import sshtunnel,pymysql,time
 import pandas as pd
 
-import yorencorrepanallawson_db.yorencorrespanallawson_db
+import yorencorrespanallawson_db.yorencorrespanallawson_db
 
 
 #输入数据库的用户名和密码
