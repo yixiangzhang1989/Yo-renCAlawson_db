@@ -9,7 +9,7 @@ import sshtunnel,pymysql,time
 import numpy as np
 import pandas as pd
 
-import yorencalawson_db.yorencalawson_db
+import yorencorrepanallawson_db.yorencorrespanallawson_db
 
 
 #输入数据库的用户名和密码
@@ -24,14 +24,14 @@ cursor = connection.cursor()
 print(time.ctime(),'连接成功，开始查询')
 
 
-df1=yorencalawson_db.yorencalawson_db.commodity_sell_report(large_name='米饭',begindate='20170701',enddate='20170702',region_block_code='sh-lawson',cursor=cursor)
-df3=yorencalawson_db.yorencalawson_db.record_for_CA(large_name='米饭',begindate='20170701',enddate='20170702',region_block_code='sh-lawson',cursor=cursor)
+df1=yorencorrespanallawson_db.yorencorrespanallawson_db.commodity_sell_report(large_name='米饭',begindate='20170701',enddate='20170702',region_block_code='sh-lawson',cursor=cursor)
+df3=yorencorrespanallawson_db.yorencorrespanallawson_db.record_for_CA(large_name='米饭',begindate='20170701',enddate='20170702',region_block_code='sh-lawson',cursor=cursor)
 
 
 results=pd.merge(df3,df1,on='commodity_cd',how='left')
 results=results[['SKU(name)','gender&age']]
 
-plotdata=yorencalawson_db.yorencalawson_db.CA(results)
+plotdata=yorencorrespanallawson_db.yorencorrespanallawson_db.CA(results)
 
 
 connection.close()
